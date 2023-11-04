@@ -6,7 +6,6 @@ public class SortingAlgorithms {
         printArray(a);
         printArray(bubblesort(a));
         printArray(selectionSort(a));
-
     }
     static void printArray(int[] array){
         for(int i=0;i<array.length;i++){
@@ -15,7 +14,7 @@ public class SortingAlgorithms {
         System.out.println();
     }
     static int[] bubblesort(int arr[]){
-        System.out.print("bubbleSort: ");
+       // System.out.print("bubbleSort: ");
         int length= arr.length;
         int temp;
         for(int i=0;i<length-1;i++){
@@ -32,7 +31,7 @@ public class SortingAlgorithms {
     }
     static int[] selectionSort(int arr[]){
         //smallest to the beginning
-        System.out.print("selectionSort: ");
+       // System.out.print("selectionSort: ");
         int length= arr.length;
         int smallest=0,temp;
 

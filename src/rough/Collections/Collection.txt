@@ -1,0 +1,30 @@
+Collections:
+1.Variable size collection(ArrayList, LinkedList)
+2.Distinct size collection(Set)
+3.Sorted collection(SortedSet)
+
+Searching methods:
+1.Linear search(in unsorted collections)
+2.Binary search(in sorted collections)
+3.Hashing(Key,value pair)
+
+Hierarchy diagram:
+https://www.javatpoint.com/collections-in-java
+https://www.javatpoint.com/java-map
+
+List(4) : ArrayList,LinkedList,Vector,Stack
+Set (4): SortedSet,TreeSet,HashSet,LinkedHashSet
+Queue(3) : Priority Queue,Deque, Array Deque
+Map(5) : SortedMap, TreeMap, HashMap, LinkedHashMap, HashTable
+
+Collection Generic interfaces:
+https://www.geeksforgeeks.org/collection-interface-in-java-with-examples/
+
+List interface:
+https://www.geeksforgeeks.org/list-interface-java-examples/
+
+Set interface:
+same interface as collection generic interface
+
+Queue interface:
+https://www.geeksforgeeks.org/queue-interface-java/

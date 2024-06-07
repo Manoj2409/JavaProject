@@ -8,12 +8,10 @@ import java.util.Set;
 public class SortingAlgorithms {
     public static void main(String[] args) {
         int a[]=new int[]{2,-2,-3,3,6,4,5,1,7,0,34,9,33,33,22};
-
         printArray(a);
         //bubblesort(a);
         //selectionSort(a);
         //insertionSort(a);
-
     }
     static void printArray(int[] array){
         for(int i=0;i<array.length;i++){
@@ -68,7 +66,6 @@ public class SortingAlgorithms {
                 arr[i]=temp;
                 swapCounter++;
             }
-
         }
         System.out.println("Swap count : "+swapCounter);
         //find the smallest element in the array
@@ -86,15 +83,11 @@ public class SortingAlgorithms {
                 }
                 else break;
             }
-
         }
         printArray(arr);
         System.out.println("Swap : "+swap);
     }
 }
-
-
-
 /*
 The difference between bubble sort and selection sort is that
 Bubble sort : Swapping occurs whenever it finds a number that is satisfying the above condition(To put simply its just brute force)

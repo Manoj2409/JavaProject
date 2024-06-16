@@ -13,12 +13,19 @@ public class listNode {
         }
     }
     public static void main(String[] args) {
-        Node node1 = new Node(10);
-        Node node2 = new Node(20);
-        Node node3 = new Node(30);
+        Node node1 = new Node(3);
+        Node node2 = new Node(2);
+        Node node3 = new Node(0);
+        Node node4 = new Node(-4);
         node1.next = node2;
         node2.next = node3;
+        node3.next=node4;
+        node4.next=node2;
 
+        listNode obj=new listNode();
+        obj.printAllNodesValues(node1);
+
+        //3,2,0,-4
        /* // Traversing the linked list and printing the values
         System.out.println("Linked List:");
         Node current = node1;
@@ -50,6 +57,10 @@ public class listNode {
         }*/
         // Output: 10 20 30
     }
-
+    public void printAllNodesValues(Node nodeHead){
+        for(Node current=nodeHead;current!=null;current=current.next){
+            System.out.println(current.value);
+        }
+    }
 }
 

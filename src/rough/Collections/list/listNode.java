@@ -1,5 +1,8 @@
 package rough.Collections.list;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class listNode {
     private Node head;
     private Node tail;
@@ -14,16 +17,18 @@ public class listNode {
     }
     public static void main(String[] args) {
         Node node1 = new Node(3);
-        Node node2 = new Node(2);
-        Node node3 = new Node(0);
-        Node node4 = new Node(-4);
-        node1.next = node2;
-        node2.next = node3;
-        node3.next=node4;
-        node4.next=node2;
+       // Node node2 = new Node(2);
+       // Node node3 = new Node(0);
+       // Node node4 = new Node(-4);
+        node1.next = null;
+       // node2.next = node1;
+        //node3.next=node4;
+        //node4.next=node2;
 
         listNode obj=new listNode();
-        obj.printAllNodesValues(node1);
+        System.out.println(obj.hasCycle(node1));
+        //obj.printAllNodesValues(node1);
+
 
         //3,2,0,-4
        /* // Traversing the linked list and printing the values
@@ -62,5 +67,18 @@ public class listNode {
             System.out.println(current.value);
         }
     }
+    public boolean hasCycle(Node nodeHead){
+        List<Integer> list=new LinkedList<>();
+
+        for(Node current=nodeHead;current.next!=null;current=current.next){
+            System.out.println(current.value);
+            if(list.contains(current.value)){
+              return true;
+          }
+            list.add(current.value);
+        }
+        return false;
+    }
+
 }
 

@@ -1,9 +1,4 @@
-package sortingAlgorithms;
-
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
+package DSA.sortingAlgorithms;
 
 public class SortingAlgorithms {
     public static void main(String[] args) {

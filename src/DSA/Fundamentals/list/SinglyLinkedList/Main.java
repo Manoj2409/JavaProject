@@ -1,4 +1,4 @@
-package rough.Collections.list.LL;
+package DSA.Fundamentals.list.SinglyLinkedList;
 
 public class Main {
     public static void main(String[] args) {

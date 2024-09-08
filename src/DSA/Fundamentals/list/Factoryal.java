@@ -1,4 +1,4 @@
-package rough.Collections.list;
+package DSA.Fundamentals.list;
 
 import java.math.BigInteger;
 import java.util.Map;

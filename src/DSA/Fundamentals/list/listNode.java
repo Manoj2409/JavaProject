@@ -1,4 +1,4 @@
-package rough.Collections.list;
+package DSA.Fundamentals.list;
 
 import java.util.LinkedList;
 import java.util.List;

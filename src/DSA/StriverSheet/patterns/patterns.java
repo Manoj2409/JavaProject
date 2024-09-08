@@ -1,4 +1,4 @@
-package DSA.patterns;
+package DSA.StriverSheet.patterns;
 
 
 public class patterns {

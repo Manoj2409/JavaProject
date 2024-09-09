@@ -2,20 +2,30 @@ package DSA.Fundamentals.list.SinglyLinkedList;
 
 public class Main {
     public static void main(String[] args) {
-
-        LinkedList myLinkedList = new LinkedList(1);
-        myLinkedList.append(2);
-        myLinkedList.append(3);
-        myLinkedList.append(4);
+        LinkedList linkedList1 = new LinkedList(1);
+        linkedList1.append(2);
+        linkedList1.append(3);
+        linkedList1.append(4);
 
         System.out.println("LL before reverse():");
-        myLinkedList.printList();
+        linkedList1.printList();
 
-        myLinkedList.reverse();
+        linkedList1.reverse();
 
         System.out.println("\nLL after reverse():");
-        myLinkedList.printList();
+        linkedList1.printList();
 
+        //System.out.println("\n removing first index and printing");
+        linkedList1.remove(0);
+
+        System.out.println("\n LinkedList after removing zeroth index");
+        linkedList1.printList();
+
+        LinkedList linkedList2=new LinkedList();
+        linkedList2.append(1);
+        linkedList2.append(2);
+        System.out.println("\nLinked List 2");
+        linkedList2.printList();
 
         /*
             EXPECTED OUTPUT:

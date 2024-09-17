@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class reverseALinkedList {
+public class LinkedList {
 
 
     public static class ListNode {

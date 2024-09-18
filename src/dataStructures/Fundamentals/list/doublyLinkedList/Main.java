@@ -1,8 +1,5 @@
 package dataStructures.Fundamentals.list.doublyLinkedList;
 
-import org.junit.Test;
-
-import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
@@ -39,6 +36,4 @@ public class Main {
         doublyLinkedList1.swapPairs();
         doublyLinkedList1.printAll();
     }
-
-
 }

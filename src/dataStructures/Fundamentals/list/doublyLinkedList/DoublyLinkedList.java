@@ -1,7 +1,5 @@
 package dataStructures.Fundamentals.list.doublyLinkedList;
 
-import java.lang.reflect.Method;
-import java.util.NoSuchElementException;
 
 public class DoublyLinkedList{
     private Node head;

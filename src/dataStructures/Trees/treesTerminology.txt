@@ -1,0 +1,6 @@
+full        :   every node points to zero nodes or two nodes
+perfect     :   full + symmetrical
+complete    :   perfect or perfect + filling the nodes from left to right
+
+Parent and child nodes
+If a node has more than one parent it is not a tree

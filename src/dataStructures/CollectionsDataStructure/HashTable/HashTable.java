@@ -3,7 +3,8 @@ package dataStructures.CollectionsDataStructure.HashTable;
 import java.util.ArrayList;
 
 //to handle collision - two ways separate chaining and linear probing
-//below we use separate chaining by implementing linkedlist
+//below we use separate chaining by implementing linked list
+
 public class HashTable   {
     private int size=7;
     private Node[] dataMap;

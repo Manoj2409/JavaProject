@@ -8,15 +8,18 @@ public class BubbleSort {
             System.out.print(arr[i]+", ");
         }
     }
+    public static void swap(int arr[],int i,int j){
+        int temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+    }
     static int[] bubbleSort(int[] arr){
         //sort in ascending order
         int length=arr.length;
         for(int i=0;i<length;i++){
             for(int j=i+1;j<length;j++){
                 if(arr[i]>arr[j]){
-                        int temp=arr[i];
-                        arr[i]=arr[j];
-                        arr[j]=temp;
+                        swap(arr,i,j);
                 }
             }
         }

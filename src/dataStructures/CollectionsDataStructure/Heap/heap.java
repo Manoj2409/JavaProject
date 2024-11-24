@@ -60,7 +60,6 @@ public class heap {
     public Integer remove(){
         if(heap.size()==0){return null;}
         if(heap.size()==1){return heap.remove(0);}
-
         //sink down
         int maxValue=heap.get(0);
         //assigning the bottom right index to 0th index

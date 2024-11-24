@@ -1,12 +1,17 @@
 package Algorithms.sorting;
 
+import java.util.Arrays;
+
 public class sorting {
     public static void main(String[] args) {
         int arr[]={10,8,9,4,6,2,5,8,1,2,0,-5};
         int result[]={-5,0,1,2,2,4,5,6,8,8,9,10};
         //printTheArray(bubbleSort(arr));
         //printTheArray(selectionSort(arr));
-        printTheArray(insertionSort(arr));
+        //printTheArray(insertionSort(arr));
+        printTheArray(result);
+        System.out.println();
+        printTheArray((mergeSort(arr)));
 
     }
     public static void printTheArray(int[] arr){
@@ -55,19 +60,52 @@ public class sorting {
         }
         return arr;
     }
-
-  /*  static int[] insertionSort(int[] arr){
-        for(int i=1;i<arr.length;i++){
-            int j=i-1;
-            for(;j>=0 && arr[j+1]<arr[j];j--){
-                swap(arr,j,j+1);
+    static int[] merge(int arr1[],int array2[]){
+        int combined[]=new int[arr1.length+array2.length];
+        int index=0,i=0,j=0;
+        for(;i<arr1.length && j<array2.length;){
+            if(arr1[i]<array2[j]){
+                combined[index]=arr1[i];
+                index++;
+                i++;
+            }
+            else{
+                combined[index]=array2[j];
+                index++;
+                j++;
             }
         }
-        return arr;
-    }*/
+        //it will pick any left off values that's missed from any one array after combining
+        while (i<arr1.length){
+            combined[index]=arr1[i];
+            i++;
+            index++;
+        }
+        while(j<array2.length){
+            combined[index]=array2[j];
+            j++;
+            index++;
+        }
+        return combined;
+    }
+    static int[] mergeSort(int array[]){
+        //base condition
+        if(array.length==1)return array;
 
-//bubble sort : pure brute force
-//selection sort : select the minimum value from the list and then sort which reduces the number of swaps and more optimal than bubble sort
-//insertion sort : optimal when the array is partially sorted
+        int mid=array.length/2;
+        int left[]=mergeSort(Arrays.copyOfRange(array,0,mid));
+        int right[]=mergeSort(Arrays.copyOfRange(array,mid,array.length));
+
+        return merge(left,right);
+    }
+
+
+
+
+
+//bubble sort       : pure brute force
+//selection sort    : select the minimum value from the list and then sort which reduces the number of swaps and more optimal than bubble sort
+//insertion sort    : optimal when the array is partially sorted
+//merge sort        : one of the optimal approach TC: O(n log n) and using recursive strategy
 
 }

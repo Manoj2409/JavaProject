@@ -1,4 +1,4 @@
-package fundamentals.Collections.StriverSheet.recursionBasics;
+package fundamentals.RandomStuffs.StriverSheet.recursionBasics;
 
 public class recursion {
     static int sum;

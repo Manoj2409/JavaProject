@@ -1,4 +1,4 @@
-package fundamentals.Collections.LeetCodeSetUp;
+package fundamentals.RandomStuffs.LeetCodeSetUp;
 
 public class lc123 {
     public static void main(String[] args) {

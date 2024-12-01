@@ -1,4 +1,4 @@
-package fundamentals.Collections.StriverSheet.patterns;
+package fundamentals.RandomStuffs.StriverSheet.patterns;
 
 
 public class patterns {

@@ -1,4 +1,4 @@
-package fundamentals.Collections.StriverSheet.Math;
+package fundamentals.RandomStuffs.StriverSheet.Math;
 
 public class simpleMathProblems {
     public static void main(String[] args) {

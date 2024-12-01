@@ -1,4 +1,4 @@
-package fundamentals.Collections.LeetCodeSetUp;
+package fundamentals.RandomStuffs.LeetCodeSetUp;
 
 import java.util.ArrayList;
 import java.util.HashMap;

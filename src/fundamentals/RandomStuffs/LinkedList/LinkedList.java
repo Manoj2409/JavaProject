@@ -1,4 +1,4 @@
-package fundamentals.Collections.LinkedList;
+package fundamentals.RandomStuffs.LinkedList;
 
 import java.util.ArrayList;
 import java.util.List;

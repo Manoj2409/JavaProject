@@ -67,6 +67,4 @@ public class heap {
         sinkDown(0);
         return maxValue;
     }
-
-
 }

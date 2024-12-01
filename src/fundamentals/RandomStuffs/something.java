@@ -1,4 +1,4 @@
-package fundamentals.Collections;
+package fundamentals.RandomStuffs;
 
 public class something {
     public static void main(String[] args) {

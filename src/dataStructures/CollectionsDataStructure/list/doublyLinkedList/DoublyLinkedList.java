@@ -76,19 +76,19 @@ public class DoublyLinkedList{
         return temp;
     }
 
-    public void prepend(int val){
-        Node temp=head;
-        Node newNode=new Node(val);
-        if(length==0){
-            head=newNode;
-            tail=newNode;
-        }else{
-            temp.prev=newNode;
-            newNode.next=temp;
-            head=newNode;
+        public void prepend(int val){
+            Node temp=head;
+            Node newNode=new Node(val);
+            if(length==0){
+                head=newNode;
+                tail=newNode;
+            }else{
+                temp.prev=newNode;
+                newNode.next=temp;
+                head=newNode;
+            }
+            length++;
         }
-        length++;
-    }
     public Node removeFirst(){
         Node temp=head;
         if(length==0) return null;
@@ -201,6 +201,15 @@ public class DoublyLinkedList{
                 }
             }
         }
+    }
+    public void swapFirstLast() {
+        // If there are less than two nodes in the list, there's nothing to swap
+        if (length < 2) return;
+
+        // Swap the values of the head and tail nodes
+        int temp = head.value;
+        head.value = tail.value;
+        tail.value = temp;
     }
 
 }

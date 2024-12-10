@@ -4,8 +4,8 @@ package dataStructures.CollectionsDataStructure.stackAndQueues.stack;
 public class testStack {
     public static void main(String[] args) {
         testStack obj=new testStack();
-        obj.Constructor();
-        obj.Push();
+        //obj.Constructor();
+        //obj.Push();
         obj.Pop();
     }
     
@@ -31,6 +31,7 @@ public class testStack {
         stack.pop();
         stack.printAll();
         stack.pop();
+        System.out.println("all popped");
         stack.printAll();
     }
 }

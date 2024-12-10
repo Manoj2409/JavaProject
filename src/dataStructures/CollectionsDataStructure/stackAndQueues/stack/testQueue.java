@@ -2,7 +2,7 @@ package dataStructures.CollectionsDataStructure.stackAndQueues.stack;
 
 public class testQueue {
     public static void main(String[] args) {
-        queue queue=new queue(10);
+        Queue queue=new Queue(10);
         queue.printQueue();
         queue.getFirst();
         queue.getLast();

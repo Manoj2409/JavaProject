@@ -41,7 +41,6 @@ public class DoublyLinkedList{
         }
         System.out.println();
     }
-
     public void getHead() {
         if (head == null) {
             System.out.println("Head: null");

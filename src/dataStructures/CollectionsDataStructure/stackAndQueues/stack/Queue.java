@@ -1,6 +1,6 @@
 package dataStructures.CollectionsDataStructure.stackAndQueues.stack;
 
-public class queue {
+public class Queue {
     class Node{
         int value;
         Node next;
@@ -11,7 +11,7 @@ public class queue {
     private Node first;
     private Node last;
     private int length;
-    public queue(int value) {
+    public Queue(int value) {
         Node newNode = new Node(value);
         first = newNode;
         last = newNode;

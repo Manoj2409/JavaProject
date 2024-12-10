@@ -14,41 +14,32 @@ public class Stack {
 
     public Stack(int value){
         Node newNode=new Node(value);
-        top=newNode;
+        top =newNode;
         height=1;
     }
     public void printAll(){
-        Node temp=top;
+        Node temp= top;
         for(;temp!=null;temp=temp.next){
             System.out.println(temp.value);
         }
     }
     public void push(int value){
         Node temp=new Node(value);
-        if(height==0){
-            top=temp;
-        }else{
-
-            temp.next=top;
-            top=temp;
+        if (height != 0) {
+            temp.next = top;
         }
+        top =temp;
         height++;
     }
-    public Node pop(){
+    public Node pop() {
+        if(height == 0) return null;
 
-        if(height==0){
-            System.out.println("Check the height before pop from Stack"+Stack.class);
-            return null;
-        }
-        else if(height==1){
-            top=null;
-            height=0;
-        }
-        else{
-            top=top.next;
-            height--;
-        }
-        return top;
+        Node temp = top;
+        top = top.next;
+        temp.next = null;
+
+        height--;
+        return temp;
     }
 
     public int peek(){

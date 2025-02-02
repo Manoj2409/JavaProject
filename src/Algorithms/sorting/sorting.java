@@ -39,10 +39,12 @@ public class sorting {
         for(int i=0;i< arr.length-1;i++){
             minElementIndex=i;
             for(int j=i+1;j< arr.length;j++){
+                //get the index of minimum value within the sub array
                 if(arr[minElementIndex]>arr[j]){
                     minElementIndex=j;
                 }
             }
+            //if it finds, then swap
             if(minElementIndex!=i){
                 swap(arr,minElementIndex,i);
             }

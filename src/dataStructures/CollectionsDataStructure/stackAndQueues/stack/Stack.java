@@ -1,6 +1,8 @@
 package dataStructures.CollectionsDataStructure.stackAndQueues.stack;
 
 public class Stack {
+    //params in stack : height, top
+    //methods in stack : push, pop, peek, print all
     //constructor,push,pop,peek
     class Node{
         int value;

@@ -2,7 +2,7 @@ package datastructures.collectionsdatastructures.Heap;
 
 public class testHeap {
     public static void main(String[] args) {
-        heap heap1=new heap();
+        Heap heap1=new Heap();
         /*heap1.insert(99);
         heap1.insert(72);
         heap1.insert(61);

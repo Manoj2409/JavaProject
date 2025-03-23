@@ -4,6 +4,8 @@ public class Stack {
     //params in stack : height, top
     //methods in stack : push, pop, peek, print all
     //constructor,push,pop,peek
+    private Node top;
+    private int height;
     class Node{
         int value;
         Node next;
@@ -11,8 +13,6 @@ public class Stack {
             this.value=value;
         }
     }
-    private Node top;
-    private int height;
 
     public Stack(int value){
         Node newNode=new Node(value);

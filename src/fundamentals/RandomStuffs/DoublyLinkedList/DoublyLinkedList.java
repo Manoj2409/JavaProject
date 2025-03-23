@@ -1,9 +1,7 @@
 package fundamentals.RandomStuffs.DoublyLinkedList;
-
 public class DoublyLinkedList {
 
     private Node head;
-    private Node tail;
     private int length;
 
     class Node {
@@ -19,7 +17,6 @@ public class DoublyLinkedList {
     public DoublyLinkedList(int value) {
         Node newNode = new Node(value);
         head = newNode;
-        tail = newNode;
         length = 1;
     }
 
@@ -27,163 +24,86 @@ public class DoublyLinkedList {
         return head;
     }
 
-    public Node getTail() {
-        return tail;
-    }
-
     public int getLength() {
         return length;
     }
 
     public void printList() {
+        StringBuilder output = new StringBuilder();
         Node temp = head;
         while (temp != null) {
-            System.out.println(temp.value);
+            output.append(temp.value);
+            if (temp.next != null) {
+                output.append(" <-> ");
+            }
             temp = temp.next;
         }
-    }
-
-    public void printAll() {
-        if (length == 0) {
-            System.out.println("Head: null");
-            System.out.println("Tail: null");
-        } else {
-            System.out.println("Head: " + head.value);
-            System.out.println("Tail: " + tail.value);
-        }
-        System.out.println("Length:" + length);
-        System.out.println("\nDoubly Linked List:");
-        if (length == 0) {
-            System.out.println("empty");
-        } else {
-            printList();
-        }
+        System.out.println(output.toString());
     }
 
     public void makeEmpty() {
         head = null;
-        tail = null;
         length = 0;
     }
 
-    public void append (int value) {
+    public void append(int value) {
         Node newNode = new Node(value);
-        if(length == 0) {
+        if (length == 0) {
             head = newNode;
-            tail = newNode;
         } else {
-            tail.next = newNode;
-            newNode.prev = tail;
-            tail = newNode;
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+            newNode.prev = current;
         }
         length++;
     }
 
-    public Node get(int index) {
-        if (index < 0 || index >= length) return null;
-        Node temp = head;
-        if (index < length/2) {
-            for (int i = 0; i < index; i++) {
-                temp = temp.next;
-            }
-        } else {
-            temp = tail;
-            for (int i = length - 1; i > index; i--) {
-                temp = temp.prev;
-            }
-        }
-        return temp;
-    }
-    public void reverse(){
+    // WRITE THE SWAPPAIRS METHOD HERE //
+    //                                 //
+    //                                 //
+    //                                 //
+    //                                 //
+    /////////////////////////////////////
 
-        Node temp1=head;
-        Node temp2=tail;
-        int tempValue=0;
-        for(int counter=0;counter<length/2;temp1=temp1.next,temp2=temp2.prev){
-            tempValue=temp1.value;
-            temp1.value=temp2.value;
-            temp2.value=tempValue;
-            //swap function
-            counter++;
-        }
+    public void swapPairs() {
+    if(length==0|| length==1){
+        return;
     }
-    public boolean palindrome(){
+        //create 4 variables and initial setup
+        Node beforePair,afterPair=head.next.next,firstValue=head,secondValue=head.next;
+        Node newNode=new Node(0);
+        firstValue.prev=newNode;
+        beforePair=firstValue.prev;
+        head=head.next;
 
-        Node temp1=head;
-        Node temp2=tail;
-        for(int counter=0;counter<length/2;temp1=temp1.next,temp2=temp2.prev){
-            if(temp1.value!=temp2.value){
-                return false;
-            }
-            //swap function
-            counter++;
-        }
-        return true;
-    }
-    public void swapPairs(){
-        //check whether the next two iteration is a pair or not
-        //3 types of check and logics for individual things
-        //:)
-        if(length<=1){
-            return;
-        }
-        Boolean firstPrev=false,pairs=false,secondNext=false;
-        Node firstValue=head;
-        Node secondValue=head.next;
-        pairs=true;
-        for(int i=0;i<length/2;i++){
-            //pairs
-            //first pair approach
-            Node thirdValue=secondValue.next;
-            if(firstPrev==false && thirdValue != null){
-                secondValue.next=firstValue;
-                secondValue.prev=secondValue;
-                firstValue.prev=secondValue;
-                firstValue.next=thirdValue;
-                thirdValue.prev=firstValue;
-                head=secondValue;
-                firstPrev=true;
-            } else if (firstPrev==false && thirdValue==null) {
-                secondValue.next=firstValue;
-                firstValue.next=null;
-                firstValue.prev=secondValue;
-                secondValue.prev=secondValue;
-                head=secondValue;
-                firstPrev=true;
-            } else if(firstPrev== true && thirdValue==null){
-                Node prevValue=firstValue.prev;
-                prevValue.next=secondValue;
-                secondValue.next=firstValue;
-                secondValue.prev=prevValue;
-                firstValue.prev=secondValue;
-                firstValue.next=null;
-                tail=firstValue;
-            }else if(firstPrev== true && thirdValue!=null){
-                Node prevValue=firstValue.prev;
-                prevValue.next=secondValue;
-                secondValue.next=firstValue;
-                secondValue.prev=prevValue;
-                firstValue.prev=secondValue;
-                firstValue.next=thirdValue;
-                thirdValue.prev=firstValue;
-            }
+        for(;;){
+            //changing stuffs
+            beforePair.next=secondValue;
+            firstValue.next=afterPair;
+            firstValue.prev=secondValue;
+            secondValue.prev=beforePair;
+            secondValue.next=firstValue;
 
-            if(firstValue.next!=null && firstValue.next.next!=null){
-                firstValue=firstValue.next.next;
-                secondValue=secondValue.next.next;
-                //reassign
-                Node temp=firstValue;
-                firstValue=secondValue;
-                secondValue=temp;
+            //
+            beforePair=firstValue;
+            if(beforePair.  next!=null){
+                firstValue=beforePair.next;
+                firstValue.prev=beforePair;
             }else{
-                return;
+                break;
             }
-
+            if(beforePair.next.next!=null){
+                firstValue=beforePair.next;
+                secondValue=firstValue.next;
+                afterPair=secondValue.next;
+            }else{
+                break;
+            }
         }
-
+        head.prev=null;
     }
-
-
-
 }
 

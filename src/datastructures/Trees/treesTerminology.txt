@@ -4,3 +4,19 @@ complete    :   perfect or perfect + filling the nodes from left to right
 
 Parent and child nodes
 If a node has more than one parent it is not a tree
+
+What is tree?
+non-linear ds, consists of nodes and each node contains two pointers - left and right
+- it can be either value or null
+
+https://www.programiz.com/dsa/trees
+
+common types of tree
+1.BT    - Binary tree
+2.BST   - Binary Search tree
+3.AVL   - Adelson-Velsky and Landis
+4.B     - Special type of self-balancing tree can have more than 2 children
+
+A binary search tree is optimised for finding a node in the tree O(log n){Worst : O(n) - if the tree look like LL } where the elements are arranged in a way
+left node = lesser than the parent
+right node = greater than the parent

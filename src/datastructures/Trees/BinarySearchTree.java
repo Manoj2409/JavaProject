@@ -39,9 +39,12 @@ public class BinarySearchTree {
             }
         }
     }
+    //using recursion
     private boolean rContains(Node currentNode,int value){
         //base condition
-        if(currentNode==null)return false;
+        if(currentNode==null){
+            System.out.println("Cannot able to find the element in bt");
+            return false;}
         if(currentNode.value==value) return true;
 
         if(value<currentNode.value){

@@ -1,6 +1,5 @@
 package datastructures.Trees;
 
-
 public class BinarySearchTree {
     public Node root;
 
@@ -76,6 +75,20 @@ public class BinarySearchTree {
         Node temp= root;
         if(root==null)return false;
         for(;;){
+            if(temp==null){
+                System.out.println("cannot able to find the value in BT");
+                return false;
+            }
+            if (temp.value == newValue){
+                System.out.println(true);
+                return true;
+            } else if (newValue < temp.value) {
+                temp=temp.left;
+            } else if(newValue > temp.value){
+                temp=temp.right;
+            }
+        }
+        /*for(;;){
             if(temp.value == newValue){
                 return true;
             }
@@ -95,7 +108,7 @@ public class BinarySearchTree {
                     return false;
                 }
             }
-        }
+        }*/
     }
 
 }

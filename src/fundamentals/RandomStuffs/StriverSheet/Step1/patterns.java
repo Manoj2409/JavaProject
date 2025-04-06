@@ -1,6 +1,6 @@
 package fundamentals.RandomStuffs.StriverSheet.Step1;
 
-import static java.lang.Math.abs;
+import static java.lang.Math.*;
 
 public class patterns {
 
@@ -249,27 +249,84 @@ public class patterns {
             System.out.println();
         }
     }
-  /*  static void pattern19(int n){
-        for(int i=0;i<2*n;i++){
-            //stars
-            for(int j=0;j<abs(n-i);j++){
+  static void pattern19(int n)
+  {
+
+      int space = 0;
+      for(int i=0;i< n;i++){
+
+          for(int j=1;j<=n-i;j++){
+              System.out.print("*");
+          }
+
+          for(int j=0;j<space;j++){
+              System.out.print(" ");
+          }
+
+          for(int j=1;j<=n-i;j++){
+              System.out.print("*");
+          }
+
+          space+=2;
+
+          System.out.println();
+      }
+
+      space = 2*n -2;
+      for(int i=1;i<=n;i++){
+          for(int j=1;j<=i;j++){
+              System.out.print("*");
+          }
+          for(int j=0;j<space;j++){
+              System.out.print(" ");
+          }
+          for(int j=1;j<=i;j++){
+              System.out.print("*");
+          }
+          space-=2;
+          System.out.println();
+      }
+  }
+    static void pattern20(int n)
+    {
+        for(int i=1;i<2*n;i++){
+            //star end point
+            int starEndPoint=(i>n)?2*n-i:i;
+            for(int j=1;j<=starEndPoint;j++){
                 System.out.print("*");
             }
-            //space
-            int spacecouter=i;
-            if(spacecouter>=n/2){
-                spacecouter=n-spacecouter;
+            for(int j=1;j<=abs(2*n-2*i);j++){
+                System.out.print(" ");
             }
-            for(int j=0;j<2*spacecouter;j++){
-                System.out.print("-");
-            }
-            //stars
-            for(int j=0;j<abs(n-i);j++){
+            for(int j=1;j<=starEndPoint;j++){
                 System.out.print("*");
             }
             System.out.println();
         }
-    }*/
+    }
+    static void pattern21(int n){
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n;j++){
+                if(i==1||j==1||i==n||j==n){
+                    System.out.print("*");
+                }else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    static void pattern22(int n){
+        int size=2*n-1;
+        for(int i=0;i<size;i++){
+            for(int j=0;j<size;j++){
+                int min = Math.min(Math.min(i, j), Math.min(size-1-i,size-1-j));
+                System.out.print(n-min);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         //pattern1(5);
         //pattern2(5);
@@ -291,6 +348,9 @@ public class patterns {
         //pattern17(5);
         //pattern18(5);
         //pattern19(3);
+        //pattern20(10);
+        //pattern21(5);
+        //pattern22(3);
 
     }
 

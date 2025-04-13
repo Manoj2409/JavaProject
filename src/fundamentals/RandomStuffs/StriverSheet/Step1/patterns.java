@@ -351,7 +351,6 @@ public class patterns {
         //pattern20(10);
         //pattern21(5);
         //pattern22(3);
-
     }
 
 

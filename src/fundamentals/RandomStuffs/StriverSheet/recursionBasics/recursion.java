@@ -20,10 +20,18 @@ public class recursion {
         for (int i : arr) {
             System.out.print(i + " ");
         }*/
-        System.out.println(fibonacci(9));
-
+        //System.out.println(fibonacci(9));
+        System.out.println(sumOfDigits(123));
     }
-
+    public static int sumOfDigits(int n){
+        //base condition
+        if(n<=0){
+            return 0;
+        }
+        int remainder=n%10;
+        n=n/10;
+        return remainder+sumOfDigits(n);
+    }
     public static int fibonacci(int n){
         if(n<2){
             return n;
@@ -48,8 +56,8 @@ public class recursion {
         if(n==1){
             return 1;
         }
-        factorial=n*factorial(n-1);
-        return factorial;
+        return n*factorial(n-1);
+
     }
 
     public static int sum(int n) {
@@ -74,4 +82,5 @@ public class recursion {
         System.out.print(n+" ");
         function1(n-1);
     }
+
 }

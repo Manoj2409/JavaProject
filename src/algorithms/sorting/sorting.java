@@ -4,14 +4,17 @@ import java.util.Arrays;
 
 public class sorting {
     public static void main(String[] args) {
-        int arr[]={10,8,9,4,6,2,5,8,1,2,0,-5};
-        int result[]={-5,0,1,2,2,4,5,6,8,8,9,10};
-        printTheArray(result);
+        //int arr[]={10,8,9,4,6,2,5,8,1,2,0,-5};
+        //int result[]={-5,0,1,2,2,4,5,6,8,8,9,10};
+        int arr[]={2,3,1};
+        System.out.print("Original array : ");printTheArray(arr);
+        //System.out.print("Expected result : ");printTheArray(result);
+        System.out.print("Actual result : ");
         //printTheArray(bubbleSort(arr));
         //printTheArray(selectionSort(arr));
-        //printTheArray(insertionSort(arr));
+        printTheArray(insertionSort(arr));
         //printTheArray((mergeSort(arr)));
-        printTheArray(quickSort(arr));
+       // printTheArray(quickSort(arr));
 
     }
     public static void printTheArray(int[] arr){
@@ -53,64 +56,70 @@ public class sorting {
     }
     static int[] insertionSort(int[] arr){
         for(int i=1;i<arr.length;i++){
-            int j=i;
-            for(;j>=1 && arr[j]<arr[j-1];j--){
-                swap(arr,j,j-1);
+            int temp=arr[i];
+            int j=i-1;
+
+            //shift the elements to the right
+            for(;j>=0 && arr[j]>temp;j--){
+                //swap(arr,j,j+1);
+                arr[j+1]=arr[j];
             }
+
+            //insert the arr i in correct place
+            arr[j+1]=temp;
         }
         return arr;
     }
-    static int[] merge(int arr1[],int array2[]){
-        int combined[]=new int[arr1.length+array2.length];
-        int index=0,i=0,j=0;
-        for(;i<arr1.length && j<array2.length;){
-            if(arr1[i]<array2[j]){
-                combined[index]=arr1[i];
-                index++;
+    static int[] merge(int arr1[],int arr2[]){
+        int[] combined =new int[arr1.length+arr2.length];
+        int i=0,j=0,k=0;
+        for(;i<arr1.length && j<arr2.length;k++){
+            if(arr1[i]<arr2[j]){
+                combined[k]=arr1[i];
                 i++;
-            }
-            else{
-                combined[index]=array2[j];
-                index++;
+            }else{
+                combined[k]=arr2[j];
                 j++;
             }
         }
-        //it will pick any left off values that's missed from any one array after combining
-        while (i<arr1.length){
-            combined[index]=arr1[i];
+        //manage left out elements
+        while(i<arr1.length){
+            combined[k]=arr1[i];
             i++;
-            index++;
+            k++;
         }
-        while(j<array2.length){
-            combined[index]=array2[j];
+        while(j<arr2.length){
+            combined[k]=arr2[j];
             j++;
-            index++;
+            k++;
         }
         return combined;
     }
-    static int[] mergeSort(int array[]){
-        //base condition
-        if(array.length==1)return array;
 
-        int mid=array.length/2;
-        int left[]=mergeSort(Arrays.copyOfRange(array,0,mid));//first returns left part of sorted array and proceeds further
-        int right[]=mergeSort(Arrays.copyOfRange(array,mid,array.length));
+    static int[] mergeSort(int[] arr){
+        //base condition
+        if(arr.length==1){
+            return arr;
+        }
+        int mid= arr.length/2;
+        int[] left =mergeSort(Arrays.copyOfRange(arr,0,mid));
+        int[] right =mergeSort(Arrays.copyOfRange(arr,mid,arr.length));
 
         return merge(left,right);
     }
-        //quick sort
-        private static int pivot(int[] array, int pivotIndex, int endIndex) {
-        //place that value in the respective index
-            int swapIndex = pivotIndex;
-            for (int i = pivotIndex + 1; i <= endIndex; i++) {
-                if (array[i] < array[pivotIndex]) {
-                    swapIndex++;
-                    swap(array, swapIndex, i);
-                }
+    //quick sort
+    private static int pivot(int[] array, int pivotIndex, int endIndex) {
+    //place that value in the respective index
+        int swapIndex = pivotIndex;
+        for (int i = pivotIndex + 1; i <= endIndex; i++) {
+            if (array[i] < array[pivotIndex]) {
+                swapIndex++;
+                swap(array, swapIndex, i);
             }
-            swap(array, pivotIndex, swapIndex);
-            return swapIndex;
         }
+        swap(array, pivotIndex, swapIndex);
+        return swapIndex;
+    }
 
     private static void quickSortHelper(int[] array, int left, int right) {
         if (left < right) {

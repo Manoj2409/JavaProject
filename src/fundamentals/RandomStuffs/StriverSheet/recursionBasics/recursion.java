@@ -22,8 +22,9 @@ public class recursion {
         }*/
         //System.out.println(fibonacci(9));
         //System.out.println(sumOfDigits(123));
-        reverseNumber(1234);
-        System.out.println(sum);
+        //reverseNumber(1234);
+        //System.out.println(sum);
+        System.out.println(reverseNumber2(1234));
     }
     public static int sumOfDigits(int n){
         //base condition
@@ -92,6 +93,19 @@ public class recursion {
         int r=n%10;
         sum=sum*10+r;
         return reverseNumber(n/10);
+    }
+    public static int reverseNumber2(int n){
+        int multiplier=(int)(Math.log10(n));
+        return helperReverseNumber(n,multiplier);
+    }
+
+    public static int helperReverseNumber(int n,int multiplier){
+        if(n==0){
+            return 0;
+        }
+        int remainder=n%10;
+        n=n/10;
+        return (int)(remainder*Math.pow(10,multiplier) + helperReverseNumber(n,multiplier-1));
     }
 
 }

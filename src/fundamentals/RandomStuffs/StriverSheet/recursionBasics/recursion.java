@@ -15,7 +15,7 @@ public class recursion {
 
         //factorial of n
         //System.out.println(factorial(5));
-     /*   int[] arr={1,2,3,4,5,6};
+        /*int[] arr={1,2,3,4,5,6};
         reverseArrayRecursion(arr,0);
         for (int i : arr) {
             System.out.print(i + " ");
@@ -24,7 +24,9 @@ public class recursion {
         //System.out.println(sumOfDigits(123));
         //reverseNumber(1234);
         //System.out.println(sum);
-        System.out.println(reverseNumber2(1234));
+        //System.out.println(reverseNumber2(1234));
+        //System.out.println(palindrome(1231));
+        System.out.println(returnZeros(1001100));
     }
     public static int sumOfDigits(int n){
         //base condition
@@ -106,6 +108,26 @@ public class recursion {
         int remainder=n%10;
         n=n/10;
         return (int)(remainder*Math.pow(10,multiplier) + helperReverseNumber(n,multiplier-1));
+    }
+
+    public static boolean palindrome(int n){
+        int multiplier=(int)(Math.log10(n));
+        return helperReverseNumber(n,multiplier)== n;
+    }
+
+    public static int returnZeros(int n){
+        int z=0;
+        return helperReturnZeros(n, z);
+
+    }
+    public static int helperReturnZeros(int n,int z){
+        if (n == 0) {
+            return z;
+        }
+        if(n%10==0){
+            return helperReturnZeros(n/10,z+1);
+        }
+        return helperReturnZeros(n/10,z);
     }
 
 }

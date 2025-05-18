@@ -6,15 +6,15 @@ public class sorting {
     public static void main(String[] args) {
         //int arr[]={10,8,9,4,6,2,5,8,1,2,0,-5};
         //int result[]={-5,0,1,2,2,4,5,6,8,8,9,10};
-        int arr[]={2,3,1};
+        int arr[]={7, 2, 1, 8, 6};
         System.out.print("Original array : ");printTheArray(arr);
         //System.out.print("Expected result : ");printTheArray(result);
         System.out.print("Actual result : ");
         //printTheArray(bubbleSort(arr));
         //printTheArray(selectionSort(arr));
-        printTheArray(insertionSort(arr));
+       // printTheArray(insertionSort(arr));
         //printTheArray((mergeSort(arr)));
-       // printTheArray(quickSort(arr));
+        printTheArray(quickSort(arr));
 
     }
     public static void printTheArray(int[] arr){
@@ -104,7 +104,6 @@ public class sorting {
         int mid= arr.length/2;
         int[] left =mergeSort(Arrays.copyOfRange(arr,0,mid));
         int[] right =mergeSort(Arrays.copyOfRange(arr,mid,arr.length));
-
         return merge(left,right);
     }
     //quick sort
@@ -133,10 +132,12 @@ public class sorting {
         return arr;
     }
 
-//bubble sort       : pure brute force
-//selection sort    : select the minimum value from the list and then sort which reduces the number of swaps and more optimal than bubble sort
-//insertion sort    : optimal when the array is partially sorted
-//merge sort        : one of the optimal approach TC: O(n log n) and using recursive strategy
-//quick sort        : used for most unsorted array and not optimal for partially or fully sorted array
+/*
+bubble sort       : pure brute force
+selection sort    : select the minimum value from the list and then sort which reduces the number of swaps and more optimal than bubble sort
+insertion sort    : optimal when the array is partially sorted
+merge sort        : one of the optimal approach TC: O(n log n) and using recursive strategy
+quick sort        : used for most unsorted array and not optimal for partially or fully sorted array
+*/
 
 }

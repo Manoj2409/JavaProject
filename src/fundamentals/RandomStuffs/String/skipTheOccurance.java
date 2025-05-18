@@ -6,11 +6,12 @@ public class skipTheOccurance {
         input : abcaadea
         output : bcde
          */
-        String input="abcaadea";
+        String input="abcappleadea";
         //String output= skiptheoccurrence(input,'a');
         //skiptheoccurrence2("",input,'a');
-        String output=skip(input);
-        System.out.println(output);
+        //String output=skip(input);
+        skipTheWords("",input,"apple");
+        //System.out.println(output);
     }
     public static String skiptheoccurrence(String string, char occurancechar){
         StringBuilder stringBuilder=new StringBuilder();
@@ -42,6 +43,19 @@ public class skipTheOccurance {
             return skip(string.substring(1));
         }else{
             return ch+skip(string.substring(1));
+        }
+    }
+
+    public static void skipTheWords(String output, String input, String word){
+        if(input.isEmpty()){
+            System.out.println(output);
+            return;
+        }
+        char ch=input.charAt(0);
+        if(input.startsWith(word)){
+            skipTheWords(output,input.substring(5),word);
+        }else{
+            skipTheWords(output+ch,input.substring(1),word);
         }
     }
 }

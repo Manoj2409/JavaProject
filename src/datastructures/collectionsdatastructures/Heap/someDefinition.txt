@@ -1,0 +1,9 @@
+Heap:
+Heap is a binary tree but the numbers are arranged in some way which follows some rules.
+Tree is always complete aka fills from left to right child tree
+
+types of heap:
+min heap and max heap
+
+left child is two times the parent index
+right child is 2*parent index +1

@@ -63,10 +63,11 @@ public class AllPaths {
             System.out.println();
             return;
         }
-        //add 4 conditions
+        //if that step is already used, then return nothing
         if(!maze[r][c]){
             return;
         }
+        //mark the step used
         maze[r][c]=false;
         step++;
         matrix[r][c]=step;
@@ -86,9 +87,9 @@ public class AllPaths {
         if(r<maze.length-1){
             allPathsWithPrinting(r+1,c,maze,string+"D",matrix,step);
         }
+        //mark the steps unused while clearing the call stack
         maze[r][c]=true;
-        step--;
         matrix[r][c]=0;
-
+        //not necessary to decrement the step value, since it will pick already existed value
     }
 }

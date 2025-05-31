@@ -62,5 +62,4 @@ public class BS {
     //tar : 2
     //mid : 8
     //{4} : -1
-//In short it will work for maximum element sorted will return an int
-
+    //In short it will work for maximum element sorted will return an int
